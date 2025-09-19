@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二进制数学小游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen" class="start-screen">
+            <h1>二进制运算</h1>
+            <div class="instructions">
+                <h3>游戏规则:</h3>
+                <ul>
+                    <li>随机生成20以内的二进制乘除运算，加减法数字不超过16，乘法乘数不超过10，除法除数不超过32</li>
+                    <li>除法运算保证能整除，且除数和被除数不相等</li>
+                    <li>5秒后显示答案（十进制）</li>
+                    <li>点击【正确】继续下一题，剩余题目-1</li>
+                    <li>点击【错误】剩余题目+2</li>
+                    <li>剩余题目>20则失败，=0则成功</li>
+                </ul>
+            </div>
+            <div class="timer-setting">
+                <label>答题倒计时：</label>
+                <label><input type="radio" name="timer" value="5" checked> 5秒</label>
+                <label><input type="radio" name="timer" value="10"> 10秒</label>
+                <label><input type="radio" name="timer" value="30"> 30秒</label>
+            </div>
+            <button id="start-btn" class="btn btn-start">开始游戏</button>
+        </div>
+        <div class="game-header" id="game-header" style="display: none;">
+            <h1>二进制运算</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="label">剩余题目:</span>
+                    <span id="remaining-questions" class="value">10</span>
+                </div>
+            </div>
+        </div>
+        <div class="game-area" id="game-area" style="display: none;">
+            <div class="question-container">
+                <div class="question" id="question">准备开始...</div>
+            </div>
+            
+            <div class="timer-container">
+                <div class="timer" id="timer">5秒</div>
+            </div>
+
+            <div class="answer-container" id="answer-container">
+                <div class="answer" id="answer"></div>
+                <div class="answer-input-container">
+                    <input type="text" id="user-answer-input" class="answer-input" placeholder="输入十进制答案" autocomplete="off">
+                    <button id="submit-btn" class="btn">提交答案</button>
+                </div>
+            </div>
+
+            <div class="game-over" id="game-over" style="display: none;">
+                <div class="result-message" id="result-message"></div>
+                <div class="game-over-buttons">
+                    <button id="restart-btn" class="btn btn-restart">重新开始</button>
+                    <button id="main-menu-btn" class="btn">回到主界面</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
